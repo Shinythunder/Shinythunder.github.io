@@ -20,7 +20,12 @@ input.style.border = "2px solid black";
 input.style.borderRadius = "5.5px";
 document.body.appendChild(input);
 
-input.addEventListener("input",function() {
+input.addEventListener("input", function() {
 div.style.backgroundColor = input.value;
 div.style.borderRadius = input.value;
-  })
+if (input.value === "boo" || input.value === "Boo") {
+  div.style.opacity = "0";
+} else {
+  div.style.opacity = "1";
+  }
+})
