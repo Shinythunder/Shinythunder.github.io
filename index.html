@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blookware</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="holder" role="region" aria-labelledby="title" aria-describedby="quote">
+        <h1 class="title" id="title">Blookware</h1>
+        <p class="quote" id="quote">For Dumbass's<br>By a Dumbass</p>
+        <button class="download-button" id="downloadBtn">Download Now</button>
+    </div>
+
+    <script>
+        // JavaScript to handle the download
+        document.getElementById('downloadBtn').addEventListener('click', () => {
+            const link = document.createElement('a');
+            link.href = 'path/to/Blookware.zip'; // Replace with the actual file path or URL
+            link.download = 'Blookware.zip'; // The file name to save as
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    </script>
+</body>
+</html>
