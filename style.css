@@ -1,70 +1,126 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Titan+One&display=swap');
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #1e1e1e;
+      font-family: 'Segoe UI', sans-serif;
+      position: relative;
+      z-index: 0;
+      color: #fff;
+    }
 
-body {
-    background-color: #00457f;
-    color: white;
-    font-family: 'Nunito', Arial, Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: flex-start; /* Align content to the top */
-    justify-content: center;
-    height: 100vh;
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        135deg,
+        #2c2c2c,
+        #3a3a3a,
+        #2e6f9e,
+        #2e6f9e,
+        #2e6f9e,
+        #2c2c2c
+      );
+      background-size: 600% 600%;
+      animation: gradientAnimation 5s ease-in-out infinite;
+      z-index: -1;
+      filter: blur(60px) brightness(0.6);
+      transform: rotateZ(2deg);
+      opacity: 0.9;
+      z-index: -1;
+    }
+
+    @keyframes gradientAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }
 
-.holder {
-    background-color: #0070cc;
-    color: white;
-    position: relative;
-    padding: 20px;
-    width: 30vw;
-    max-width: 450px;
-    min-height: 200px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3), inset 0 -6px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    overflow: hidden;
-    transform: translateY(10vh); /* Shift the container upwards */
+::-webkit-scrollbar-track {
+  background: none;
 }
 
-.title {
-    font-family: 'Titan One', Arial, Helvetica, sans-serif;
-    font-size: 2rem;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    font-weight: 0;
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: content-box;
 }
 
-.quote {
-    font-family: 'Nunito', Arial, Helvetica, sans-serif;
-    font-size: 1.2rem;
-    line-height: 1.5;
-    margin: 0 0 20px;
-    white-space: pre-wrap; /* Allows multi-line quotes */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
 }
 
-.download-button {
-    font-family: 'Nunito', Arial, Helvetica, sans-serif;
-    font-size: 1rem;
-    color: white;
-    background-color: #00457f;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s, transform 0.2s;
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #888 transparent;
 }
 
-.download-button:hover {
-    background-color: #002d4d;
-    transform: scale(1.05);
-}
 
-.download-button:active {
-    transform: scale(0.95);
-}
+
+    .container {
+      max-width: 800px;
+      margin: 100px auto;
+      background-color: rgba(30, 30, 30);
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(8px);
+      z-index: 10000;
+      position: relative; 
+    }
+
+
+    h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+      color: #f7d794;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-top: 30px;
+      border-bottom: 2px solid #2e6f9e;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-top: 10px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin: 8px 0;
+    }
+
+    a {
+      color: #7dbde8;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
